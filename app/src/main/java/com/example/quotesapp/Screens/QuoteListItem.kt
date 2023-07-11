@@ -42,7 +42,7 @@ fun QuoteListItems() {
                 Text(
                     text = "Time is money",
                     style = MaterialTheme.typography.body2,
-                    modifier = Modifier.padding(0.dp,0.dp,0.dp,8.dp),
+                    modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 8.dp),
                     textAlign = TextAlign.Center
                 )
                 Box(
@@ -55,11 +55,10 @@ fun QuoteListItems() {
                     text = "ABCD",
                     style = MaterialTheme.typography.body2,
                     fontWeight = FontWeight.Thin,
-                    modifier = Modifier.padding(top =4.dp)
+                    modifier = Modifier.padding(top = 4.dp)
                 )
-
             }
-
         }
     }
 }
+
