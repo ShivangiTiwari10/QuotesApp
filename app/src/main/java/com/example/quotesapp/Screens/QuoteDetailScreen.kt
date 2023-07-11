@@ -14,13 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.quotesapp.models.Quotes
 
 
-@Preview
 @Composable
-fun QuoteDetail() {
+fun QuoteDetail(quote:Quotes) {
     Box(
 //        contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -53,7 +52,7 @@ fun QuoteDetail() {
                     contentDescription = "Quote"
                 )
                 Text(
-                    text = "Time is Money",
+                    text = quote.quote,
                     fontFamily = FontFamily.SansSerif, style = MaterialTheme.typography.h6
                 )
                 Spacer(
@@ -61,7 +60,7 @@ fun QuoteDetail() {
                     Modifier.heightIn(16.dp)
                 )
                 Text(
-                    text = "TheoArrestor",
+                    text = quote.author,
                     fontFamily = FontFamily.Monospace,
                     style = MaterialTheme.typography.subtitle1
                 )

@@ -16,12 +16,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.quotesapp.models.Quotes
 
-@Preview
 @Composable
-fun QuoteListItems() {
+fun QuoteListItems(quotes: Quotes, onClick: () -> Unit) {
 
     Card(
         elevation = 4.dp, modifier = Modifier.padding(8.dp)
@@ -40,7 +39,7 @@ fun QuoteListItems() {
             Spacer(modifier = Modifier.padding(4.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Time is money",
+                    text = quotes.quote,
                     style = MaterialTheme.typography.body2,
                     modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 8.dp),
                     textAlign = TextAlign.Center
@@ -52,7 +51,7 @@ fun QuoteListItems() {
                         .height(1.dp)
                 )
                 Text(
-                    text = "ABCD",
+                    text = quotes.author,
                     style = MaterialTheme.typography.body2,
                     fontWeight = FontWeight.Thin,
                     modifier = Modifier.padding(top = 4.dp)
