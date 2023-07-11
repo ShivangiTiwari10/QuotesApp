@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Theme.QuotesApp" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/purple_700</item>
+        <item name="android:statusBarColor">#191919</item>
     </style>
 </resources>
