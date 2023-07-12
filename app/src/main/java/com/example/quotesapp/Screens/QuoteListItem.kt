@@ -45,7 +45,7 @@ fun QuoteListItems(quotes: Quotes, onClick: (quotes: Quotes) -> Unit) {
                     text = quotes.quote,
                     style = MaterialTheme.typography.body2,
                     modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 8.dp),
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Start
                 )
                 Box(
                     modifier = Modifier

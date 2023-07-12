@@ -49,7 +49,7 @@ fun App() {
                 DataManeger.switchPages(it)
             }
         } else {
-            DataManeger.curreQuote.let {
+            DataManeger.currentQuote.let {
                 if (it != null) {
                     QuoteDetail(quote = it)
                 }

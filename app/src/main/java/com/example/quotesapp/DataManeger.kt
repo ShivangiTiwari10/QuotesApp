@@ -10,7 +10,7 @@ object DataManeger {
 
     var data = emptyArray<Quotes>()
 
-    var curreQuote: Quotes? = null
+    var currentQuote: Quotes? = null
 
     //    Define a state
     var currentPage = mutableStateOf(pages.LISTING)
@@ -33,7 +33,7 @@ object DataManeger {
     fun switchPages(quotes: Quotes?) {
 
         if (currentPage.value == pages.LISTING) {
-            curreQuote = quotes
+            currentQuote = quotes
             currentPage.value = pages.DETAIL
         } else {
             currentPage.value = pages.LISTING
