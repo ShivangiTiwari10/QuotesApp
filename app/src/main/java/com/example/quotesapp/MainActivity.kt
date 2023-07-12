@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.quotesapp.Screens.QuoteDetail
 import com.example.quotesapp.Screens.QuoteListScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,14 +43,25 @@ fun App() {
 //    exising data in main thread
 
     if (DataManeger.isDataLoaded.value) {
-        QuoteListScreen(data = DataManeger.data) {
 
+        if (DataManeger.currentPage.value == pages.LISTING) {
+            QuoteListScreen(data = DataManeger.data) {
+                DataManeger.switchPages(it)
+            }
+        } else {
+            DataManeger.curreQuote.let {
+                if (it != null) {
+                    QuoteDetail(quote = it)
+                }
+            }
         }
+
     } else {
 
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier
+                .size(100.dp)
                 .background(Color.LightGray)
 
         ) {
@@ -58,5 +70,12 @@ fun App() {
         }
     }
 
+}
+
+
+enum class pages {
+
+    LISTING,
+    DETAIL
 }
 

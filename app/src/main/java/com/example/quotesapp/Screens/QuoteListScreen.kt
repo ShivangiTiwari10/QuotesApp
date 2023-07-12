@@ -13,7 +13,7 @@ import com.example.quotesapp.models.Quotes
 
 
 @Composable
-fun QuoteListScreen(data: Array<Quotes>, onClick: () -> Unit) {
+fun QuoteListScreen(data: Array<Quotes>, onClick: (quotes:Quotes) -> Unit) {
 
     Column() {
 
@@ -24,9 +24,7 @@ fun QuoteListScreen(data: Array<Quotes>, onClick: () -> Unit) {
                 .fillMaxWidth(1f), style = MaterialTheme.typography.h5,
             fontFamily = FontFamily.SansSerif
         )
-        QuoteList(data = data) {
-            onClick
-        }
+        QuoteList(data = data, onClick)
 
     }
 
